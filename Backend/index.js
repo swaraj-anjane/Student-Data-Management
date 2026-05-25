@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://student-data-management-ofjdrqffc.vercel.app/",
+      "https://student-data-management-ofjdrqffc.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
@@ -45,7 +45,7 @@ app.listen(port, async () => {
   try {
     await connectDb();
     console.log(`server is running on port ${port}`);
-    verifyNodemailerConnection();
+    // verifyNodemailerConnection();
     
   } catch (error) {
     process.exit(1);
