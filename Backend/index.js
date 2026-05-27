@@ -16,12 +16,12 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/upload",express.static("upload"))
+app.use("/upload", express.static("upload"));
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://student-data-management-ofjdrqffc.vercel.app",
+      "https://student-data-management-delta.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
@@ -46,7 +46,6 @@ app.listen(port, async () => {
     await connectDb();
     console.log(`server is running on port ${port}`);
     verifyNodemailerConnection();
-    
   } catch (error) {
     process.exit(1);
   }
