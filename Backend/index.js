@@ -45,7 +45,7 @@ app.listen(port, async () => {
   try {
     await connectDb();
     console.log(`server is running on port ${port}`);
-    // verifyNodemailerConnection();
+    verifyNodemailerConnection();
     
   } catch (error) {
     process.exit(1);
